@@ -4,14 +4,15 @@ import TVShowPage from './pages/tvShowPage';
 import HomePage from './pages/homePage';
 import Favourate from './pages/liked';
 import SearchResult from './pages/searched';
-
+import ErrorPage from './pages/error';
 
 
 const Router = () => {
   const router = createBrowserRouter([
     {
       path: '/',
-      element: <HomePage/>
+      element: <HomePage/>,
+      errorElement: <ErrorPage />,
     },
     {
       path: '/tvShow',
