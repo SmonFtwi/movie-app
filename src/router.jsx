@@ -5,8 +5,8 @@ import HomePage from './pages/homePage';
 import Favourate from './pages/liked';
 import SearchResult from './pages/searched';
 import ErrorPage from './pages/error';
-
-
+import MovieDetail from './pages/moviesDetailes';
+import TvShowDetail from './pages/TVshowDetail';
 const Router = () => {
   const router = createBrowserRouter([
     {
@@ -29,6 +29,14 @@ const Router = () => {
     {
       path: '/searchResult',
       element: <SearchResult/>
+    },
+    {
+      path: '/movies/:id', 
+      element: <MovieDetail />
+    },
+    {
+      path: '/tvShow/:id', 
+      element: <TvShowDetail />
     }
 
   ]);
