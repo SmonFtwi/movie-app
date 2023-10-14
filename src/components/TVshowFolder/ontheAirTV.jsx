@@ -32,7 +32,7 @@ export default AiringNowTvShowList;
 
 export function AiringNowTvShow({data}){
   const {addToLiked,likedMovies} = useContext(AppContext);
-  const liked = likedMovies.includes(data.id);
+  const liked = likedMovies.some((likedMovie) => likedMovie.id === data.id);
     return (
       <>
         <div className=" w-1/6 shadow-md  rounded-md flex flex-col align-middle hover:scale-105 ease-in-out duration-300">
@@ -42,7 +42,7 @@ export function AiringNowTvShow({data}){
           <div className=" flex justify-between m-4 text-white">
             <h3> {data.first_air_date}</h3>
             <HeartStraight size={36} 
-            onClick={() => addToLiked(data.id)}
+            onClick={() => addToLiked(data)}
             className={`heart-icon-container align-bottom ml-6 cursor-pointer ${
                 liked ? " text-red-600" : ""
               }`}

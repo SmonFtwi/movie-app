@@ -16,7 +16,7 @@ function Header () {
         </ul>
         <HeartStraight size={36} 
          className=" text-white align-bottom ml-6 cursor-pointer "
-         //onClick={() => {navigate('/likedVideo')}}
+         onClick={() => {navigate('/likedVideo')}}
         />
         </div>
     </div>

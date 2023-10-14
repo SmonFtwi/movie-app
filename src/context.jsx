@@ -30,13 +30,14 @@ export const AppContextProvider = (props) => {
     }, [searchKey]);
     
 
-    const addToLiked = (movieId) => {
-        if (likedMovies.includes(movieId)) {
-          setLikedMovies(likedMovies.filter((id) => id !== movieId));
-        } else {
-          setLikedMovies([...likedMovies, movieId]);
-        }
-      };
+    const addToLiked = (movie) => {
+      if (likedMovies.some((likedMovie) => likedMovie.id === movie.id)) {
+        setLikedMovies(likedMovies.filter((likedMovie) => likedMovie.id !== movie.id));
+      } else {
+        setLikedMovies([...likedMovies, movie]);
+      }
+    };
+    
     
     
 
